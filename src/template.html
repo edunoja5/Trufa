@@ -1,5 +1,23 @@
+<!--HEAD-->
 <title>Trufa · Accesorios para perros y gatos</title>
-<meta name="description" content="Accesorios prácticos para perros y gatos: limpiador de patas, cepillo con vapor y arnés antitirones. Envío con seguimiento y 30 días de devolución.">
+<meta name="description" content="Accesorios prácticos para perros y gatos: limpiador de patas, cepillo con vapor y arnés antitirones. Envío con seguimiento a toda España, aduana incluida y 30 días de devolución.">
+<!--META-->
+<link rel="canonical" href="{{SITE}}/">
+<meta name="theme-color" content="#2242C4">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Trufa">
+<meta property="og:locale" content="es_ES">
+<meta property="og:url" content="{{SITE}}/">
+<meta property="og:title" content="Trufa · Menos barro, menos pelo, más paseos">
+<meta property="og:description" content="Accesorios prácticos para perros y gatos. Envío a toda España con seguimiento y 30 días de devolución.">
+<meta property="og:image" content="{{SITE}}/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"OnlineStore","name":"Trufa","url":"{{SITE}}/","logo":"{{SITE}}/icon-180.png","email":"infoheravia@gmail.com","description":"Accesorios prácticos para perros y gatos con envío a toda España.","areaServed":"ES","hasMerchantReturnPolicy":{"@type":"MerchantReturnPolicy","applicableCountry":"ES","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":30,"returnMethod":"https://schema.org/ReturnByMail"}}</script>
+<!--/META-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
@@ -21,7 +39,7 @@
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 button{font:inherit;cursor:pointer;color:inherit}
 img{display:block}
@@ -183,8 +201,18 @@ footer.site .legal-line{border-top:1px solid color-mix(in srgb,var(--bg) 20%,tra
 .qty button{background:none;border:0;width:44px;height:100%;font-size:20px}
 .qty span{min-width:26px;text-align:center;font-weight:700}
 .qty-row .btn{flex:1}
+.paysafe{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:14px;font-size:13.5px;font-weight:600;color:var(--muted)}
+.paysafe svg{width:16px;height:16px}
+.marks{display:inline-flex;gap:6px}
+.marks i{font-style:normal;font-size:11.5px;font-weight:800;letter-spacing:.02em;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:5px;padding:2px 7px}
+.pay .marks i{border:0;background:var(--bg);font-size:12.5px;padding:4px 9px}
+.upsell{margin:18px 0 8px;padding:14px;border-radius:14px;background:var(--soft);display:grid;gap:10px;font-size:14.5px}
+.up{display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:center;text-decoration:none;font-size:14px;line-height:1.3}
+.up img{width:52px;height:52px;border-radius:10px;object-fit:cover;background:#fff}
+.up .go{font-weight:700;color:var(--brand)}
 .ship-note{display:grid;gap:8px;margin-top:20px;padding:16px;border-radius:14px;background:var(--soft);font-size:14.5px}
 .ship-note div{display:flex;gap:10px;align-items:center}
+.ship-note b{font-weight:700;color:var(--ink)}
 .ship-note svg{width:20px;height:20px;color:var(--ok);flex:none}
 .bullets{margin:22px 0 0;padding:0;list-style:none;display:grid;gap:10px}
 .bullets li{display:flex;gap:10px}
@@ -237,7 +265,7 @@ form.checkout input{border:1px solid var(--line);border-radius:10px;padding:11px
 .toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:999px;font-weight:600;z-index:60;font-size:15px;white-space:nowrap}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
-
+<!--BODY-->
 <div class="announce"><div class="wrap"><span>Envío gratis desde 39 €</span><span>30 días para devolver</span><span>Pago seguro con PayPal o tarjeta</span></div></div>
 
 <header class="top">
@@ -269,7 +297,7 @@ form.checkout input{border:1px solid var(--line);border-radius:10px;padding:11px
         <p class="lead">Accesorios sencillos que resuelven los líos de cada día con tu mascota. Elegidos uno a uno y con 30 días para devolverlos si no te convencen.</p>
         <div class="ctas">
           <a class="btn primary" href="#tienda">Ver la tienda</a>
-          <a class="btn line" href="#p-limpia-patas">El más vendido</a>
+          <a class="btn line" href="#p-limpia-patas">Patas limpias</a>
         </div>
         <div class="assure">
           <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Envío con seguimiento</span>
@@ -278,7 +306,7 @@ form.checkout input{border:1px solid var(--line);border-radius:10px;padding:11px
         </div>
       </div>
       <div class="hero-img">
-        <img src="{{IMG:arnes-perro}}" alt="Perro con el arnés antitirones Trufa">
+        <img src="{{IMG:arnes-perro}}" alt="Perro con el arnés antitirones Trufa" fetchpriority="high" width="900" height="900">
         <a class="hero-card" href="#p-arnes"><img src="{{IMG:arnes-colores}}" alt=""><div><b>Arnés antitirones acolchado</b><span class="num" id="heroPrice"></span></div></a>
       </div>
     </div>
@@ -296,7 +324,7 @@ form.checkout input{border:1px solid var(--line);border-radius:10px;padding:11px
   <section class="block" id="tienda">
     <div class="wrap">
       <div class="sec-head">
-        <div><div class="eyebrow">Tienda</div><h2>Los más vendidos</h2></div>
+        <div><div class="eyebrow">Tienda</div><h2>Nuestros productos</h2></div>
         <div class="filters" role="group" aria-label="Filtrar por mascota">
           <button class="chip" data-f="todos" aria-pressed="true">Todos</button>
           <button class="chip" data-f="perro" aria-pressed="false">Perros</button>
@@ -311,7 +339,7 @@ form.checkout input{border:1px solid var(--line);border-radius:10px;padding:11px
     <div class="wrap">
       <div class="pic"><img src="{{IMG:limpia-patas-1}}" alt="Limpiadores de patas Trufa en tres colores" loading="lazy"></div>
       <div>
-        <div class="eyebrow">El más vendido</div>
+        <div class="eyebrow">Nuestro favorito</div>
         <h2>Patas limpias en 10 segundos, sin toallas</h2>
         <ol class="steps">
           <li><div><b>Llena el vaso con un poco de agua</b><span>No hace falta jabón.</span></div></li>
@@ -336,7 +364,7 @@ form.checkout input{border:1px solid var(--line);border-radius:10px;padding:11px
 
   <section class="block" id="preguntas" style="padding-top:0">
     <div class="wrap faq-wrap">
-      <div><div class="eyebrow">Ayuda</div><h2>Preguntas frecuentes</h2><p class="side">¿No encuentras lo que buscas? Escríbenos a <b>infoheravia@gmail.com</b> y te respondemos en 24 horas laborables.</p></div>
+      <div><div class="eyebrow">Ayuda</div><h2>Preguntas frecuentes</h2><p class="side">¿No encuentras lo que buscas? Escríbenos a <a href="mailto:infoheravia@gmail.com"><b>infoheravia@gmail.com</b></a> y te respondemos en 24 horas laborables.</p></div>
       <div>
         <details open><summary>¿Cuánto tarda mi pedido?</summary><p>Lo preparamos en 1 a 3 días laborables y la entrega tarda entre 6 y 12 días laborables en península y Baleares. Te enviamos el número de seguimiento por email. Para Canarias, Ceuta y Melilla, escríbenos antes de comprar.</p></details>
         <details><summary>¿Cuánto cuesta el envío?</summary><p>3,95 € por pedido. Gratis a partir de 39 €.</p></details>
@@ -356,10 +384,10 @@ form.checkout input{border:1px solid var(--line);border-radius:10px;padding:11px
       <div class="brand">
         <a class="logo" href="#inicio" style="justify-self:start;color:var(--bg)"><svg viewBox="0 0 32 32" aria-hidden="true"><ellipse cx="16" cy="19.5" rx="9" ry="7.5" fill="currentColor"/><circle cx="6.8" cy="10" r="3.3" fill="currentColor"/><circle cx="12.6" cy="6" r="3.3" fill="currentColor"/><circle cx="19.4" cy="6" r="3.3" fill="currentColor"/><circle cx="25.2" cy="10" r="3.3" fill="currentColor"/></svg>trufa</a>
         <p>Accesorios prácticos para perros y gatos, con envío a toda España.</p>
-        <div class="pay" aria-label="Formas de pago"><span>PayPal</span><span>VISA</span><span>Mastercard</span></div>
+        <div class="pay" aria-label="Formas de pago" id="footPay"></div>
       </div>
       <div><h4>Tienda</h4><ul id="footShop"></ul></div>
-      <div><h4>Ayuda</h4><ul><li><button class="link" data-pol="envios">Envíos</button></li><li><button class="link" data-pol="devoluciones">Devoluciones y garantía</button></li><li><a href="#preguntas">Preguntas frecuentes</a></li><li>infoheravia@gmail.com</li></ul></div>
+      <div><h4>Ayuda</h4><ul><li><button class="link" data-pol="envios">Envíos</button></li><li><button class="link" data-pol="devoluciones">Devoluciones y garantía</button></li><li><a href="#preguntas">Preguntas frecuentes</a></li><li><a href="mailto:infoheravia@gmail.com">infoheravia@gmail.com</a></li></ul></div>
       <div><h4>Legal</h4><ul><li><button class="link" data-pol="aviso">Aviso legal</button></li><li><button class="link" data-pol="privacidad">Privacidad</button></li><li><button class="link" data-pol="cookies">Cookies</button></li></ul></div>
     </div>
     <div class="legal-line"><span>© 2026 Trufa · Eduardo Herrero Viadero · NIF [pendiente]</span><span id="demoNote"></span></div>
@@ -383,7 +411,7 @@ const CONFIG = { paypalClientId: "{{PAYPAL_CLIENT_ID}}" };
 
 const SHIP = 3.95, FREE_FROM = 39;
 const PRODUCTS = [
-  {id:"limpia-patas", name:"Limpiador de patas portátil", sub:"Patas limpias en 10 segundos", pet:"perro", price:24.95, tag:"Más vendido",
+  {id:"limpia-patas", name:"Limpiador de patas portátil", sub:"Patas limpias en 10 segundos", pet:"perro", price:24.95, tag:"Favorito",
    imgs:["{{IMG:limpia-patas-2}}","{{IMG:limpia-patas-1}}"],
    hook:"Vuelves del paseo, ha llovido y el suelo acaba lleno de huellas. Mete la pata, gira el vaso y sale limpia, solo con agua.",
    bullets:["Cerdas de silicona blanda que no tiran del pelo","Solo agua: sin jabones ni toallitas","Se vacía y se aclara en el grifo en segundos","Talla M para perros de 5 a 25 kg, talla L para más de 25 kg"],
@@ -403,6 +431,13 @@ const PRODUCTS = [
    details:"Tejido acolchado transpirable con ribetes reflectantes. Mide el contorno del pecho justo detrás de las patas delanteras y elige la talla según la tabla."}
 ];
 
+const PAYMARKS = `<span class="marks"><i>PayPal</i><i>VISA</i><i>Mastercard</i></span>`;
+// Entrega: 1–3 días laborables de preparación + 6–12 de envío = entre 7 y 15 días laborables desde hoy
+function addWorkdays(d, n){ d = new Date(d); while(n>0){ d.setDate(d.getDate()+1); const w=d.getDay(); if(w!==0&&w!==6) n--; } return d; }
+function deliveryWindow(){
+  const f = d => d.toLocaleDateString("es-ES",{weekday:"short", day:"numeric", month:"short"}).replace(/[.,]/g,"");
+  const now = new Date(); return `${f(addWorkdays(now,7))} y el ${f(addWorkdays(now,15))}`;
+}
 const eur = n => n.toLocaleString("es-ES",{style:"currency",currency:"EUR"});
 const byId = id => PRODUCTS.find(p=>p.id===id);
 const $ = s => document.querySelector(s);
@@ -417,7 +452,7 @@ const save = () => { try { localStorage.setItem("trufa-cart-v2", JSON.stringify(
 function cardHTML(p){
   const sw = p.swatch ? `<div class="swatches">${Object.values(p.swatch).map(c=>`<i style="background:${c}"></i>`).join("")}</div>` : "";
   return `<a class="card" href="#p-${p.id}">
-    <div class="media">${p.tag?`<span class="tag">${p.tag}</span>`:""}<img src="${p.imgs[0]}" alt="${p.name}" loading="lazy">${p.imgs[1]?`<img class="second" src="${p.imgs[1]}" alt="" loading="lazy">`:""}</div>
+    <div class="media">${p.tag?`<span class="tag">${p.tag}</span>`:""}<img src="${p.imgs[0]}" alt="${p.name}" loading="lazy" decoding="async">${p.imgs[1]?`<img class="second" src="${p.imgs[1]}" alt="" loading="lazy">`:""}</div>
     <h3>${p.name}</h3><div class="sub">${p.sub}</div>${sw}<div class="price num">${eur(p.price)}</div></a>`;
 }
 function renderGrid(filter="todos"){
@@ -452,8 +487,9 @@ function renderProduct(p){
             <button class="btn primary" id="addBtn">Añadir al carrito</button>
           </div>
           <button class="btn dark block" id="buyNow" style="margin-top:10px">Comprar ahora</button>
+          <div class="paysafe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Pago seguro ${PAYMARKS}</div>
           <div class="ship-note">
-            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h12v9H2zM14 10h4l3 3v3h-7"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><span>Recíbelo en 6–12 días laborables, con seguimiento</span></div>
+            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h12v9H2zM14 10h4l3 3v3h-7"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><span>Pídelo hoy y recíbelo entre el <b>${deliveryWindow()}</b>, con seguimiento</span></div>
             <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 12a8.5 8.5 0 1 0 2.6-6.1M3.5 4v4.2h4.2"/></svg><span>30 días para devolverlo · garantía de 3 años</span></div>
             <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Envío gratis desde 39 €. Aduana incluida</span></div>
           </div>
@@ -532,8 +568,11 @@ function renderCart(){
     <div class="sum"><span>Subtotal</span><span class="num">${eur(t.sub)}</span></div>
     <div class="sum"><span>Envío</span><span class="num">${t.ship?eur(t.ship):"Gratis"}</span></div>
     <div class="sum total"><span>Total</span><span class="num">${eur(t.total)}</span></div>
-    <div class="note">IVA e impuestos de importación incluidos.</div>
-    <button class="btn primary block" id="toCheckout">Finalizar compra</button>`;
+    <div class="note">IVA e impuestos de importación incluidos. Entrega estimada entre el ${deliveryWindow()}.</div>
+    <button class="btn primary block" id="toCheckout">Finalizar compra</button>
+    <div class="paysafe" style="justify-content:center;margin:0">Pago seguro ${PAYMARKS}</div>`;
+  const ideas = PRODUCTS.filter(p=>!cart.some(l=>l.id===p.id));
+  if (t.ship && ideas.length) $("#cartBody").insertAdjacentHTML("beforeend", `<div class="upsell"><b>Completa tu pedido y llévate el envío gratis</b>${ideas.map(p=>`<a class="up" href="#p-${p.id}" data-close><img src="${p.imgs[0]}" alt="" loading="lazy"><span>${p.name}<br><b class="num">${eur(p.price)}</b></span><span class="go">Ver</span></a>`).join("")}</div>`);
 }
 
 /* ---------- Pago ---------- */
@@ -661,6 +700,7 @@ window.addEventListener("hashchange", route);
 
 $("#heroPrice").textContent = eur(byId("arnes").price);
 $("#featPrice").textContent = eur(byId("limpia-patas").price);
+$("#footPay").innerHTML = PAYMARKS;
 $("#footShop").innerHTML = PRODUCTS.map(p=>`<li><a href="#p-${p.id}">${p.name}</a></li>`).join("");
 if (!CONFIG.paypalClientId || CONFIG.paypalClientId.startsWith("{{")) $("#demoNote").textContent = "Versión de demostración: el pago está desactivado.";
 renderGrid(); renderCart(); route();

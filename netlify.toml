@@ -1,3 +1,9 @@
 # Netlify publica la carpeta public/ tal cual (la web ya va generada en el repositorio).
 [build]
   publish = "public"
+
+# Las fotos cambian de nombre si cambian, así que el navegador puede guardarlas una semana
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
