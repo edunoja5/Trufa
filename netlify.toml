@@ -1,0 +1,3 @@
+# Netlify publica la carpeta public/ tal cual (la web ya va generada en el repositorio).
+[build]
+  publish = "public"

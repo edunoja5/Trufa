@@ -1,0 +1,667 @@
+<title>Trufa · Accesorios para perros y gatos</title>
+<meta name="description" content="Accesorios prácticos para perros y gatos: limpiador de patas, cepillo con vapor y arnés antitirones. Envío con seguimiento y 30 días de devolución.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: tienda de marca. Portada con foto de estilo de vida, más vendidos, producto estrella, promesas, preguntas y pie con legales. Ficha de producto como página propia (#p-id). */
+:root{
+  --bg:#FFFFFF; --soft:#F3F5F4; --surface:#FFFFFF; --ink:#14211D; --muted:#5B6A65; --line:#E3E8E6;
+  --brand:#2242C4; --brand-ink:#FFFFFF; --brand-soft:#E8EDFF; --sun:#FFD54A; --ok:#1B7A4C; --sale:#B4232C;
+  --display:"Bricolage Grotesque","Avenir Next",system-ui,sans-serif;
+  --body:"Figtree","Segoe UI",system-ui,sans-serif;
+  --r:16px; --wrap:1180px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1513; --soft:#141D1A; --surface:#18221F; --ink:#ECF2EF; --muted:#9DAEA8; --line:#26332F;
+  --brand:#8FA6FF; --brand-ink:#0B1433; --brand-soft:#1C2647; --sun:#F2C94C; --ok:#5FD39A; --sale:#FF8A8A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1513; --soft:#141D1A; --surface:#18221F; --ink:#ECF2EF; --muted:#9DAEA8; --line:#26332F;
+  --brand:#8FA6FF; --brand-ink:#0B1433; --brand-soft:#1C2647; --sun:#F2C94C; --ok:#5FD39A; --sale:#FF8A8A; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button{font:inherit;cursor:pointer;color:inherit}
+img{display:block}
+:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);line-height:1.06;text-wrap:balance;margin:0;letter-spacing:-.02em}
+.num{font-variant-numeric:tabular-nums}
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--brand)}
+.btn{white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:14px 26px;font-weight:700;text-decoration:none;font-size:16px;transition:transform .15s ease, background .15s ease}
+.btn:active{transform:scale(.98)}
+.btn.primary{background:var(--brand);color:var(--brand-ink)}
+.btn.dark{background:var(--ink);color:var(--bg)}
+.btn.line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.block{width:100%}
+.photo-bg{background:#fff}
+
+/* Barra de anuncios y cabecera */
+.announce{background:var(--ink);color:var(--bg);font-size:13.5px;font-weight:600}
+.announce .wrap{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;padding-block:9px;text-align:center}
+.announce span+span{opacity:.75}
+@media (max-width:640px){.announce span+span{display:none}}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:68px;gap:16px}
+.logo{font-family:var(--display);font-weight:800;font-size:28px;letter-spacing:-.03em;text-decoration:none;display:flex;align-items:center;gap:8px;justify-self:center}
+.logo svg{width:30px;height:30px}
+nav.main{display:flex;gap:22px;font-weight:600;font-size:15px}
+nav.main a{text-decoration:none;color:var(--muted)}
+nav.main a:hover{color:var(--ink)}
+.icons{justify-self:end;display:flex;gap:6px}
+.icon-btn{position:relative;background:none;border:0;width:44px;height:44px;border-radius:999px;display:grid;place-items:center}
+.icon-btn:hover{background:var(--soft)}
+.icon-btn svg{width:24px;height:24px}
+.count{position:absolute;top:4px;right:2px;min-width:19px;height:19px;padding:0 5px;border-radius:999px;background:var(--brand);color:var(--brand-ink);font-size:11.5px;font-weight:700;display:grid;place-items:center}
+.count[data-n="0"]{display:none}
+@media (max-width:760px){nav.main{display:none}.top .wrap{grid-template-columns:auto 1fr auto}.logo{justify-self:start}}
+
+/* Portada */
+.hero{background:var(--soft)}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding-block:56px}
+.hero h1{font-size:clamp(40px,5.6vw,72px);font-weight:800;margin-top:14px}
+.hero h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--sun) 62%)}
+.hero p.lead{font-size:19px;color:var(--muted);max-width:46ch;margin:18px 0 28px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px}
+.hero .assure{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:26px;font-size:14px;font-weight:600;color:var(--muted)}
+.hero .assure span{display:flex;align-items:center;gap:6px}
+.hero .assure svg{width:18px;height:18px;color:var(--ok)}
+.hero-img{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:1/1;max-width:100%;background:#fff;box-shadow:0 30px 60px -30px rgba(20,33,29,.35)}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+.hero-card{position:absolute;left:16px;bottom:16px;right:16px;max-width:320px;background:var(--surface);color:var(--ink);border-radius:14px;padding:12px 14px;display:flex;gap:12px;align-items:center;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.12)}
+.hero-card img{width:52px;height:52px;border-radius:10px;object-fit:cover;background:#fff;flex:none}
+.hero-card b{display:block;font-size:14.5px;line-height:1.25}
+.hero-card span{font-size:13.5px;color:var(--muted)}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;padding-block:36px;gap:28px}.hero-img{max-width:520px}}
+
+/* Franja de garantías */
+.perks{border-bottom:1px solid var(--line)}
+.perks .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding-block:22px}
+.perk{display:flex;gap:12px;align-items:center;font-size:14.5px;min-width:0}
+.perk svg{flex:none;width:28px;height:28px;color:var(--brand)}
+.perk b{display:block;font-size:15px}
+.perk span{color:var(--muted)}
+@media (max-width:860px){.perks .wrap{grid-template-columns:1fr 1fr}}
+@media (max-width:420px){.perks .wrap{grid-template-columns:1fr}}
+
+/* Secciones */
+section.block{padding-block:72px}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px;margin-bottom:28px}
+.sec-head h2{font-size:clamp(30px,3.8vw,46px);margin-top:8px}
+.sec-head a{font-weight:700;color:var(--brand);text-decoration:none}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1.5px solid var(--line);background:var(--surface);border-radius:999px;padding:8px 16px;font-weight:600;font-size:14.5px}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* Tarjetas de producto */
+.grid{display:grid;grid-template-columns:repeat(var(--cols,4),minmax(0,1fr));gap:24px}
+@media (max-width:900px){.grid{--cols:2 !important;gap:14px}}
+.card{display:flex;flex-direction:column;gap:6px;text-decoration:none;min-width:0}
+.card .media{position:relative;aspect-ratio:1/1;border-radius:var(--r);overflow:hidden;background:#fff;border:1px solid var(--line)}
+.card .media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .35s ease, transform .5s ease}
+.card .media img.second{opacity:0}
+.card:hover .media img.second{opacity:1}
+.card:hover .media img{transform:scale(1.03)}
+.tag{position:absolute;top:12px;left:12px;z-index:1;background:var(--ink);color:var(--bg);font-size:12px;font-weight:700;border-radius:999px;padding:5px 11px}
+.card h3{font-family:var(--body);font-size:16.5px;font-weight:700;letter-spacing:0;margin-top:8px;line-height:1.3}
+.card .sub{color:var(--muted);font-size:14.5px}
+.card .price{font-weight:700;font-size:17px;margin-top:2px}
+.swatches{display:flex;gap:6px;margin-top:4px}
+.swatches i{width:14px;height:14px;border-radius:999px;border:1px solid var(--line)}
+
+/* Producto estrella */
+.feature{background:var(--brand-soft)}
+.feature .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.feature .pic{border-radius:24px;overflow:hidden;background:#fff;aspect-ratio:1/1;max-width:100%}
+.feature .pic img{width:100%;height:100%;object-fit:cover}
+.feature h2{font-size:clamp(32px,4vw,50px);margin:10px 0 18px}
+.steps{list-style:none;margin:0 0 28px;padding:0;display:grid;gap:16px;counter-reset:st}
+.steps li{display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:start}
+.steps li::before{counter-increment:st;content:counter(st);width:40px;height:40px;border-radius:999px;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font-weight:800;font-family:var(--display)}
+.steps b{display:block;font-size:17px}
+.steps span{color:var(--muted)}
+@media (max-width:860px){.feature .wrap{grid-template-columns:1fr;gap:28px}}
+
+/* Promesas */
+.promises{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.promise{background:var(--soft);border-radius:var(--r);padding:26px}
+.promise svg{width:34px;height:34px;color:var(--brand)}
+.promise h3{font-size:22px;margin:14px 0 8px}
+.promise p{margin:0;color:var(--muted)}
+@media (max-width:860px){.promises{grid-template-columns:1fr}}
+
+/* Preguntas */
+.faq-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px}
+.faq-wrap h2{font-size:clamp(30px,3.8vw,46px);margin-top:8px}
+.faq-wrap p.side{color:var(--muted);max-width:36ch}
+details{border-bottom:1px solid var(--line);padding-block:18px}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{font-weight:700;cursor:pointer;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:22px;line-height:1;color:var(--muted)}
+details[open] summary::after{content:"−"}
+details p{color:var(--muted);margin:10px 0 0;max-width:62ch}
+@media (max-width:860px){.faq-wrap{grid-template-columns:1fr;gap:20px}}
+
+/* Pie */
+footer.site{background:var(--ink);color:var(--bg);padding-block:56px 28px;margin-top:0}
+footer.site .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
+footer.site h4{margin:0 0 12px;font-size:14px;letter-spacing:.1em;text-transform:uppercase;opacity:.7}
+footer.site ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+footer.site a,footer.site button.link{color:var(--bg);text-decoration:none;opacity:.9;background:none;border:0;padding:0;text-align:left;font-size:15px}
+footer.site a:hover,footer.site button.link:hover{opacity:1;text-decoration:underline}
+footer.site .brand p{opacity:.75;max-width:34ch;margin:10px 0 0;font-size:15px}
+.pay{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.pay span{background:var(--bg);color:var(--ink);border-radius:6px;padding:4px 9px;font-size:12.5px;font-weight:800;letter-spacing:.02em}
+footer.site .legal-line{border-top:1px solid color-mix(in srgb,var(--bg) 20%,transparent);margin-top:40px;padding-top:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13.5px;opacity:.7}
+@media (max-width:860px){footer.site .cols{grid-template-columns:1fr 1fr}}
+@media (max-width:420px){footer.site .cols{grid-template-columns:1fr}}
+
+/* Página de producto */
+.crumbs{font-size:14px;color:var(--muted);padding-block:18px}
+.crumbs a{color:var(--muted)}
+.pdp{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;padding-bottom:64px}
+.gallery{display:grid;grid-template-columns:76px 1fr;gap:14px;align-self:start;position:sticky;top:90px}
+.thumbs{display:grid;gap:10px;align-content:start}
+.thumbs button{padding:0;border:1.5px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;aspect-ratio:1/1}
+.thumbs button[aria-current="true"]{border-color:var(--ink)}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+.main-img{border-radius:20px;overflow:hidden;background:#fff;border:1px solid var(--line);aspect-ratio:1/1;max-width:100%}
+.main-img img{width:100%;height:100%;object-fit:cover}
+.buy h1{font-size:clamp(30px,3.4vw,42px);margin:8px 0 10px}
+.buy .price{font-size:28px;font-weight:800;font-family:var(--display)}
+.buy .tax{font-size:14px;color:var(--muted);font-weight:500;font-family:var(--body);margin-left:6px}
+.buy .hook{font-size:17.5px;color:var(--muted);margin:16px 0}
+.opt{margin-top:18px}
+.opt label{display:block;font-weight:700;font-size:14.5px;margin-bottom:8px}
+.opt label span{font-weight:500;color:var(--muted)}
+.opts{display:flex;gap:8px;flex-wrap:wrap}
+.qty-row{display:flex;gap:12px;margin-top:22px}
+.qty{display:inline-flex;align-items:center;border:1.5px solid var(--line);border-radius:999px;height:52px}
+.qty button{background:none;border:0;width:44px;height:100%;font-size:20px}
+.qty span{min-width:26px;text-align:center;font-weight:700}
+.qty-row .btn{flex:1}
+.ship-note{display:grid;gap:8px;margin-top:20px;padding:16px;border-radius:14px;background:var(--soft);font-size:14.5px}
+.ship-note div{display:flex;gap:10px;align-items:center}
+.ship-note svg{width:20px;height:20px;color:var(--ok);flex:none}
+.bullets{margin:22px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+.bullets li{display:flex;gap:10px}
+.bullets li::before{content:"";flex:none;width:20px;height:20px;margin-top:2px;border-radius:999px;background:var(--brand-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-7' fill='none' stroke='%232242C4' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat}
+.buy details summary{font-size:16px}
+.related h2{font-size:30px;margin-bottom:20px}
+.sticky-buy{display:none}
+@media (max-width:860px){
+  .pdp{grid-template-columns:1fr;gap:24px}
+  .gallery{grid-template-columns:1fr;position:static}
+  .thumbs{grid-template-columns:repeat(5,64px);order:2}
+  .sticky-buy{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:25;gap:12px;align-items:center;justify-content:space-between;background:var(--surface);border-top:1px solid var(--line);padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px))}
+  .sticky-buy b{font-family:var(--display);font-size:20px}
+  .sticky-buy .btn{padding:12px 22px}
+  body.on-pdp{padding-bottom:76px}
+}
+
+/* Carrito, modales, avisos */
+.scrim{position:fixed;inset:0;background:rgba(8,14,12,.5);z-index:40}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--surface);z-index:50;display:flex;flex-direction:column;box-shadow:-12px 0 40px rgba(0,0,0,.18);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.drawer header{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid var(--line)}
+.drawer h2{font-size:24px}
+.x{background:none;border:0;font-size:30px;line-height:1;padding:4px 10px}
+.drawer .body{flex:1;overflow:auto;padding:8px 20px}
+.drawer .foot{border-top:1px solid var(--line);padding:18px 20px;display:grid;gap:10px;font-size:15px}
+.line{display:grid;grid-template-columns:72px 1fr auto;gap:14px;align-items:center;padding-block:14px;border-bottom:1px solid var(--line)}
+.line img{width:72px;height:72px;border-radius:12px;object-fit:cover;background:#fff;border:1px solid var(--line)}
+.line b{font-size:15px;display:block;line-height:1.3}
+.line .v{color:var(--muted);font-size:13.5px}
+.line .qty{height:34px;margin-top:6px}
+.line .qty button{width:32px;font-size:16px}
+.sum{display:flex;justify-content:space-between}
+.sum.total{font-weight:800;font-size:19px}
+.ship-bar{height:6px;background:var(--line);border-radius:6px;overflow:hidden;margin-top:8px}
+.ship-bar i{display:block;height:100%;background:var(--ok);transition:width .3s}
+.empty{color:var(--muted);text-align:center;padding:48px 10px}
+.modal{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:16px;pointer-events:none}
+.modal .box{pointer-events:auto;background:var(--surface);border-radius:22px;width:min(680px,100%);max-height:calc(100% - 32px);overflow:auto;position:relative}
+.modal .x{position:absolute;top:10px;right:10px}
+.legal{padding:32px 28px}
+.legal h2{font-size:28px;margin-bottom:10px;padding-right:36px}
+.legal h3{font-family:var(--body);font-size:17px;letter-spacing:0;margin-top:20px}
+.legal p,.legal li{font-size:15.5px}
+.ph{background:var(--sun);color:#14211D;border-radius:4px;padding:0 4px;font-size:13.5px}
+form.checkout{display:grid;gap:10px}
+form.checkout label{font-size:13.5px;font-weight:600;display:grid;gap:4px}
+form.checkout input{border:1px solid var(--line);border-radius:10px;padding:11px 12px;background:var(--bg);color:var(--ink);font:inherit}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.note{font-size:13px;color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:999px;font-weight:600;z-index:60;font-size:15px;white-space:nowrap}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<div class="announce"><div class="wrap"><span>Envío gratis desde 39 €</span><span>30 días para devolver</span><span>Pago seguro con PayPal o tarjeta</span></div></div>
+
+<header class="top">
+  <div class="wrap">
+    <nav class="main" aria-label="Principal">
+      <a href="#tienda">Tienda</a>
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#preguntas">Ayuda</a>
+    </nav>
+    <a class="logo" href="#inicio" aria-label="Trufa, inicio">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><ellipse cx="16" cy="19.5" rx="9" ry="7.5" fill="currentColor"/><circle cx="6.8" cy="10" r="3.3" fill="currentColor"/><circle cx="12.6" cy="6" r="3.3" fill="currentColor"/><circle cx="19.4" cy="6" r="3.3" fill="currentColor"/><circle cx="25.2" cy="10" r="3.3" fill="currentColor"/><ellipse cx="12.8" cy="17.6" rx="2.1" ry="1.5" fill="var(--sun)"/></svg>
+      trufa
+    </a>
+    <div class="icons">
+      <button class="icon-btn" id="openCart" aria-label="Abrir carrito">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.3 11.2a2 2 0 0 1-2 1.8H8.3a2 2 0 0 1-2-1.8z"/><path d="M9 8V7a3 3 0 0 1 6 0v1"/></svg>
+        <span class="count" id="cartCount" data-n="0">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero" id="inicio">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Para perros y gatos de casa</div>
+        <h1>Menos barro, menos pelo, <em>más paseos</em>.</h1>
+        <p class="lead">Accesorios sencillos que resuelven los líos de cada día con tu mascota. Elegidos uno a uno y con 30 días para devolverlos si no te convencen.</p>
+        <div class="ctas">
+          <a class="btn primary" href="#tienda">Ver la tienda</a>
+          <a class="btn line" href="#p-limpia-patas">El más vendido</a>
+        </div>
+        <div class="assure">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Envío con seguimiento</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>IVA e importación incluidos</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Garantía de 3 años</span>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="{{IMG:arnes-perro}}" alt="Perro con el arnés antitirones Trufa">
+        <a class="hero-card" href="#p-arnes"><img src="{{IMG:arnes-colores}}" alt=""><div><b>Arnés antitirones acolchado</b><span class="num" id="heroPrice"></span></div></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="perks">
+    <div class="wrap">
+      <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h12v9H2zM14 10h4l3 3v3h-7"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><div><b>Envío gratis desde 39 €</b><span>Entrega en 6–12 días laborables</span></div></div>
+      <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 12a8.5 8.5 0 1 0 2.6-6.1M3.5 4v4.2h4.2"/></svg><div><b>30 días de devolución</b><span>El doble de lo que marca la ley</span></div></div>
+      <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="18" height="11" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg><div><b>Pago seguro</b><span>PayPal o tarjeta, sin cuenta</span></div></div>
+      <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/></svg><div><b>Atención en español</b><span>Respuesta en 24 h laborables</span></div></div>
+    </div>
+  </div>
+
+  <section class="block" id="tienda">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><div class="eyebrow">Tienda</div><h2>Los más vendidos</h2></div>
+        <div class="filters" role="group" aria-label="Filtrar por mascota">
+          <button class="chip" data-f="todos" aria-pressed="true">Todos</button>
+          <button class="chip" data-f="perro" aria-pressed="false">Perros</button>
+          <button class="chip" data-f="gato" aria-pressed="false">Gatos</button>
+        </div>
+      </div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section class="block feature" id="como-funciona">
+    <div class="wrap">
+      <div class="pic"><img src="{{IMG:limpia-patas-1}}" alt="Limpiadores de patas Trufa en tres colores" loading="lazy"></div>
+      <div>
+        <div class="eyebrow">El más vendido</div>
+        <h2>Patas limpias en 10 segundos, sin toallas</h2>
+        <ol class="steps">
+          <li><div><b>Llena el vaso con un poco de agua</b><span>No hace falta jabón.</span></div></li>
+          <li><div><b>Mete la pata y gira el vaso</b><span>Las cerdas de silicona sacan el barro de entre los dedos.</span></div></li>
+          <li><div><b>Seca y listo</b><span>Vacías, aclaras en el grifo y lo dejas junto a la puerta.</span></div></li>
+        </ol>
+        <a class="btn primary" href="#p-limpia-patas">Ver el limpiador · <span class="num" id="featPrice"></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="sec-head"><div><div class="eyebrow">Por qué Trufa</div><h2>Comprar aquí es sencillo</h2></div></div>
+      <div class="promises">
+        <div class="promise"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5M8 11l2 2 4-4"/></svg><h3>Pocos productos, bien elegidos</h3><p>Solo vendemos cosas que resuelven un problema real del día a día con tu mascota.</p></div>
+        <div class="promise"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg><h3>Precio final, sin sorpresas</h3><p>IVA, aranceles e importación incluidos. El envío se ve antes de pagar y es gratis desde 39 €.</p></div>
+        <div class="promise"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg><h3>Si no te convence, lo devuelves</h3><p>Tienes 30 días para devolverlo y 3 años de garantía si algo falla.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="preguntas" style="padding-top:0">
+    <div class="wrap faq-wrap">
+      <div><div class="eyebrow">Ayuda</div><h2>Preguntas frecuentes</h2><p class="side">¿No encuentras lo que buscas? Escríbenos a <b>infoheravia@gmail.com</b> y te respondemos en 24 horas laborables.</p></div>
+      <div>
+        <details open><summary>¿Cuánto tarda mi pedido?</summary><p>Lo preparamos en 1 a 3 días laborables y la entrega tarda entre 6 y 12 días laborables en península y Baleares. Te enviamos el número de seguimiento por email. Para Canarias, Ceuta y Melilla, escríbenos antes de comprar.</p></details>
+        <details><summary>¿Cuánto cuesta el envío?</summary><p>3,95 € por pedido. Gratis a partir de 39 €.</p></details>
+        <details><summary>¿Tendré que pagar aduana?</summary><p>No. Los impuestos y aranceles de importación ya están incluidos en el precio.</p></details>
+        <details><summary>¿Puedo devolver un producto?</summary><p>Sí, tienes 30 días desde que lo recibes. Si llegó defectuoso, la devolución corre de nuestra cuenta. En otro caso, el envío de vuelta lo paga el cliente.</p></details>
+        <details><summary>¿Qué talla elijo?</summary><p>Cada producto con tallas tiene su tabla de medidas en la ficha. Si dudas, escríbenos con el peso y la raza de tu mascota y te decimos cuál.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<main id="productView" hidden></main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div class="brand">
+        <a class="logo" href="#inicio" style="justify-self:start;color:var(--bg)"><svg viewBox="0 0 32 32" aria-hidden="true"><ellipse cx="16" cy="19.5" rx="9" ry="7.5" fill="currentColor"/><circle cx="6.8" cy="10" r="3.3" fill="currentColor"/><circle cx="12.6" cy="6" r="3.3" fill="currentColor"/><circle cx="19.4" cy="6" r="3.3" fill="currentColor"/><circle cx="25.2" cy="10" r="3.3" fill="currentColor"/></svg>trufa</a>
+        <p>Accesorios prácticos para perros y gatos, con envío a toda España.</p>
+        <div class="pay" aria-label="Formas de pago"><span>PayPal</span><span>VISA</span><span>Mastercard</span></div>
+      </div>
+      <div><h4>Tienda</h4><ul id="footShop"></ul></div>
+      <div><h4>Ayuda</h4><ul><li><button class="link" data-pol="envios">Envíos</button></li><li><button class="link" data-pol="devoluciones">Devoluciones y garantía</button></li><li><a href="#preguntas">Preguntas frecuentes</a></li><li>infoheravia@gmail.com</li></ul></div>
+      <div><h4>Legal</h4><ul><li><button class="link" data-pol="aviso">Aviso legal</button></li><li><button class="link" data-pol="privacidad">Privacidad</button></li><li><button class="link" data-pol="cookies">Cookies</button></li></ul></div>
+    </div>
+    <div class="legal-line"><span>© 2026 Trufa · Eduardo Herrero Viadero · NIF [pendiente]</span><span id="demoNote"></span></div>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="cart" hidden aria-label="Carrito">
+  <header><h2>Tu carrito</h2><button class="x" data-close aria-label="Cerrar">×</button></header>
+  <div class="body" id="cartBody"></div>
+  <div class="foot" id="cartFoot"></div>
+</aside>
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true">
+  <div class="box"><button class="x" data-close aria-label="Cerrar">×</button><div id="modalBody"></div></div>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+// Pega aquí el Client ID de PayPal Business. Vacío = modo demostración.
+const CONFIG = { paypalClientId: "{{PAYPAL_CLIENT_ID}}" };
+
+const SHIP = 3.95, FREE_FROM = 39;
+const PRODUCTS = [
+  {id:"limpia-patas", name:"Limpiador de patas portátil", sub:"Patas limpias en 10 segundos", pet:"perro", price:24.95, tag:"Más vendido",
+   imgs:["{{IMG:limpia-patas-2}}","{{IMG:limpia-patas-1}}"],
+   hook:"Vuelves del paseo, ha llovido y el suelo acaba lleno de huellas. Mete la pata, gira el vaso y sale limpia, solo con agua.",
+   bullets:["Cerdas de silicona blanda que no tiran del pelo","Solo agua: sin jabones ni toallitas","Se vacía y se aclara en el grifo en segundos","Talla M para perros de 5 a 25 kg, talla L para más de 25 kg"],
+   options:[{name:"Talla", values:["M","L"]}],
+   details:"Material: polipropileno y silicona. Talla M: 8,2 × 11,2 cm. Talla L: 9,2 × 15,2 cm. Color según disponibilidad (azul, verde o naranja)."},
+  {id:"cepillo-vapor", name:"Cepillo con vapor 3 en 1", sub:"El pelo suelto se queda en el cepillo", pet:"gato", price:19.95, tag:"Nuevo",
+   imgs:["{{IMG:cepillo-amarillo}}","{{IMG:cepillo-verde}}"], colorImg:{"Amarillo":0,"Verde":1}, swatch:{"Amarillo":"#F5CE2E","Verde":"#A4D65E"},
+   hook:"Un vapor frío y fino humedece el pelo para que el que está suelto se quede en el cepillo y no salga volando por la casa.",
+   bullets:["Vapor frío ultrafino, sin calor","Púas de silicona blanda que no arañan","Funciona con un solo botón","Recargable por USB"],
+   options:[{name:"Color", values:["Amarillo","Verde"]}],
+   details:"Rellena el depósito con agua del grifo y pulsa el botón. Incluye cable de carga USB. Úsalo siempre con agua limpia."},
+  {id:"arnes", name:"Arnés antitirones acolchado", sub:"Paseos más cómodos para los dos", pet:"perro", price:26.95, tag:null,
+   imgs:["{{IMG:arnes-perro}}","{{IMG:arnes-colores}}"], swatch:{"Naranja":"#F07A1A","Rojo":"#D8283A","Negro":"#1E1E1E"},
+   hook:"Enganchas la correa a la anilla del pecho y el tirón se reparte por el torso en lugar de apretar el cuello. El asa de la espalda te deja sujetarlo al cruzar la calle o subir al coche.",
+   bullets:["Anilla en el pecho y en la espalda","Asa acolchada para sujetarlo rápido","Costuras reflectantes para el paseo nocturno","Hebillas de apertura rápida y 4 puntos de ajuste"],
+   options:[{name:"Color", values:["Naranja","Rojo","Negro"]},{name:"Talla", values:["S","M","L","XL"], help:"Contorno de pecho: S 35–50 cm · M 45–65 · L 60–80 · XL 75–100"}],
+   details:"Tejido acolchado transpirable con ribetes reflectantes. Mide el contorno del pecho justo detrás de las patas delanteras y elige la talla según la tabla."}
+];
+
+const eur = n => n.toLocaleString("es-ES",{style:"currency",currency:"EUR"});
+const byId = id => PRODUCTS.find(p=>p.id===id);
+const $ = s => document.querySelector(s);
+const defVariant = p => p.options.map(o=>o.values[0]).join(" · ");
+const lineImg = l => { const p = byId(l.id); const c = p && p.colorImg && l.variant.split(" · ").map(v=>p.colorImg[v]).find(v=>v!==undefined); return p ? p.imgs[c||0] : ""; };
+
+let cart = [];
+try { cart = JSON.parse(localStorage.getItem("trufa-cart-v2")||"[]").filter(l=>byId(l.id)); } catch(e) { cart = []; }
+const save = () => { try { localStorage.setItem("trufa-cart-v2", JSON.stringify(cart)); } catch(e){} };
+
+/* ---------- Portada ---------- */
+function cardHTML(p){
+  const sw = p.swatch ? `<div class="swatches">${Object.values(p.swatch).map(c=>`<i style="background:${c}"></i>`).join("")}</div>` : "";
+  return `<a class="card" href="#p-${p.id}">
+    <div class="media">${p.tag?`<span class="tag">${p.tag}</span>`:""}<img src="${p.imgs[0]}" alt="${p.name}" loading="lazy">${p.imgs[1]?`<img class="second" src="${p.imgs[1]}" alt="" loading="lazy">`:""}</div>
+    <h3>${p.name}</h3><div class="sub">${p.sub}</div>${sw}<div class="price num">${eur(p.price)}</div></a>`;
+}
+function renderGrid(filter="todos"){
+  const list = PRODUCTS.filter(p=> filter==="todos" || p.pet===filter || p.pet==="ambos");
+  $("#grid").style.setProperty("--cols", Math.min(4, Math.max(3, list.length)));
+  $("#grid").innerHTML = list.length ? list.map(cardHTML).join("") : `<p class="sub">Pronto tendremos productos para ${filter==="gato"?"gatos":"perros"}.</p>`;
+}
+
+/* ---------- Página de producto ---------- */
+function renderProduct(p){
+  const sel = {}; p.options.forEach(o=>sel[o.name]=o.values[0]);
+  let qty = 1, imgIdx = 0;
+  const related = PRODUCTS.filter(x=>x.id!==p.id);
+  $("#productView").innerHTML = `
+    <div class="wrap">
+      <div class="crumbs"><a href="#inicio">Inicio</a> / <a href="#tienda">Tienda</a> / ${p.name}</div>
+      <div class="pdp">
+        <div class="gallery">
+          <div class="thumbs">${p.imgs.map((s,i)=>`<button data-thumb="${i}" aria-current="${i===0}" aria-label="Foto ${i+1}"><img src="${s}" alt=""></button>`).join("")}</div>
+          <div class="main-img"><img id="mainImg" src="${p.imgs[0]}" alt="${p.name}"></div>
+        </div>
+        <div class="buy">
+          <div class="eyebrow">${p.pet==="perro"?"Para perros":p.pet==="gato"?"Para gatos":"Perros y gatos"}</div>
+          <h1>${p.name}</h1>
+          <div class="price num">${eur(p.price)}<span class="tax">IVA incluido</span></div>
+          <p class="hook">${p.hook}</p>
+          ${p.options.map(o=>`<div class="opt"><label>${o.name}: <span data-sel="${o.name}">${sel[o.name]}</span></label>
+            <div class="opts" role="group" aria-label="${o.name}">${o.values.map((v,i)=>`<button class="chip" data-opt="${o.name}" data-val="${v}" aria-pressed="${i===0}">${p.swatch&&p.swatch[v]?`<i style="display:inline-block;width:12px;height:12px;border-radius:99px;background:${p.swatch[v]};margin-right:6px;vertical-align:-1px"></i>`:""}${v}</button>`).join("")}</div>
+            ${o.help?`<p class="note" style="margin:8px 0 0">${o.help}</p>`:""}</div>`).join("")}
+          <div class="qty-row">
+            <div class="qty"><button data-q="-1" aria-label="Uno menos">−</button><span id="pq">1</span><button data-q="1" aria-label="Uno más">+</button></div>
+            <button class="btn primary" id="addBtn">Añadir al carrito</button>
+          </div>
+          <button class="btn dark block" id="buyNow" style="margin-top:10px">Comprar ahora</button>
+          <div class="ship-note">
+            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h12v9H2zM14 10h4l3 3v3h-7"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><span>Recíbelo en 6–12 días laborables, con seguimiento</span></div>
+            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 12a8.5 8.5 0 1 0 2.6-6.1M3.5 4v4.2h4.2"/></svg><span>30 días para devolverlo · garantía de 3 años</span></div>
+            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Envío gratis desde 39 €. Aduana incluida</span></div>
+          </div>
+          <ul class="bullets">${p.bullets.map(b=>`<li>${b}</li>`).join("")}</ul>
+          <div style="margin-top:22px">
+            <details><summary>Detalles del producto</summary><p>${p.details}</p></details>
+            <details><summary>Envío y devoluciones</summary><p>Preparamos el pedido en 1 a 3 días laborables y lo recibes en 6 a 12 días laborables. Envío 3,95 €, gratis desde 39 €. Tienes 30 días para devolverlo.</p></details>
+          </div>
+        </div>
+      </div>
+      <div class="related block" style="padding-top:0"><h2>También te puede gustar</h2><div class="grid" style="--cols:${Math.max(3,related.length)}">${related.map(cardHTML).join("")}</div></div>
+    </div>
+    <div class="sticky-buy"><div><div class="note" style="margin:0">${p.name}</div><b class="num">${eur(p.price)}</b></div><button class="btn primary" id="stickyAdd">Añadir</button></div>`;
+  const root = $("#productView");
+  const setImg = i => { imgIdx = i; $("#mainImg").src = p.imgs[i]; root.querySelectorAll("[data-thumb]").forEach(b=>b.setAttribute("aria-current", +b.dataset.thumb===i)); };
+  root.querySelectorAll("[data-thumb]").forEach(b=>b.onclick=()=>setImg(+b.dataset.thumb));
+  root.querySelectorAll("[data-opt]").forEach(b=>b.onclick=()=>{
+    const o=b.dataset.opt, v=b.dataset.val; sel[o]=v;
+    root.querySelectorAll(`[data-opt="${o}"]`).forEach(x=>x.setAttribute("aria-pressed", x===b));
+    root.querySelector(`[data-sel="${o}"]`).textContent = v;
+    if (p.colorImg && p.colorImg[v]!==undefined) setImg(p.colorImg[v]);
+  });
+  root.querySelectorAll("[data-q]").forEach(b=>b.onclick=()=>{ qty=Math.max(1,qty+ +b.dataset.q); $("#pq").textContent=qty; });
+  const variant = () => p.options.map(o=>sel[o.name]).join(" · ");
+  $("#addBtn").onclick = ()=>{ addToCart(p.id, variant(), qty); openCart(); };
+  $("#stickyAdd").onclick = ()=>{ addToCart(p.id, variant(), qty); openCart(); };
+  $("#buyNow").onclick = ()=>{ addToCart(p.id, variant(), qty); openCheckout(); };
+}
+
+/* ---------- Navegación ---------- */
+function route(){
+  const h = location.hash.slice(1);
+  const p = h.startsWith("p-") && byId(h.slice(2));
+  closeAll();
+  if (p){
+    renderProduct(p);
+    $("#home").hidden = true; $("#productView").hidden = false; document.body.classList.add("on-pdp");
+    document.title = `${p.name} · Trufa`;
+    window.scrollTo(0,0);
+  } else {
+    const wasProduct = !$("#productView").hidden;
+    $("#home").hidden = false; $("#productView").hidden = true; document.body.classList.remove("on-pdp");
+    document.title = "Trufa · Accesorios para perros y gatos";
+    const target = h && document.getElementById(h);
+    if (target) target.scrollIntoView(); else if (wasProduct) window.scrollTo(0,0);
+  }
+}
+
+/* ---------- Carrito ---------- */
+function addToCart(id, variant, n=1){
+  const p = byId(id); variant = variant || defVariant(p);
+  const ex = cart.find(l=>l.id===id && l.variant===variant);
+  if (ex) ex.qty += n; else cart.push({id, variant, qty:n});
+  save(); renderCart(); toast(`Añadido: ${p.name}`);
+}
+function totals(){
+  const sub = cart.reduce((s,l)=>s + byId(l.id).price*l.qty, 0);
+  const ship = sub===0 || sub>=FREE_FROM ? 0 : SHIP;
+  return {sub, ship, total: sub+ship};
+}
+function renderCart(){
+  const count = cart.reduce((s,l)=>s+l.qty,0);
+  $("#cartCount").textContent = count; $("#cartCount").dataset.n = count;
+  if (!cart.length){
+    $("#cartBody").innerHTML = `<div class="empty">Tu carrito está vacío.</div>`;
+    $("#cartFoot").innerHTML = `<a class="btn primary block" href="#tienda" data-close>Ver productos</a>`;
+    return;
+  }
+  $("#cartBody").innerHTML = cart.map((l,i)=>{ const p = byId(l.id); return `<div class="line"><img src="${lineImg(l)}" alt="">
+      <div style="min-width:0"><b>${p.name}</b><span class="v">${l.variant}</span><br>
+      <div class="qty"><button data-dec="${i}" aria-label="Quitar uno">−</button><span>${l.qty}</span><button data-inc="${i}" aria-label="Añadir uno">+</button></div></div>
+      <b class="num">${eur(p.price*l.qty)}</b></div>`; }).join("");
+  const t = totals(), left = Math.max(0, FREE_FROM - t.sub);
+  $("#cartFoot").innerHTML = `
+    <div style="font-size:14px">${t.ship===0?"Tienes el envío gratis.":`Te faltan <b class="num">${eur(left)}</b> para el envío gratis.`}<div class="ship-bar"><i style="width:${t.ship===0?100:Math.min(100,t.sub/FREE_FROM*100)}%"></i></div></div>
+    <div class="sum"><span>Subtotal</span><span class="num">${eur(t.sub)}</span></div>
+    <div class="sum"><span>Envío</span><span class="num">${t.ship?eur(t.ship):"Gratis"}</span></div>
+    <div class="sum total"><span>Total</span><span class="num">${eur(t.total)}</span></div>
+    <div class="note">IVA e impuestos de importación incluidos.</div>
+    <button class="btn primary block" id="toCheckout">Finalizar compra</button>`;
+}
+
+/* ---------- Pago ---------- */
+function loadPayPal(){
+  return new Promise((res,rej)=>{
+    if (window.paypal) return res();
+    const s = document.createElement("script");
+    s.src = `https://www.paypal.com/sdk/js?client-id=${encodeURIComponent(CONFIG.paypalClientId)}&currency=EUR&locale=es_ES&components=buttons`;
+    s.onload = res; s.onerror = rej; document.head.appendChild(s);
+  });
+}
+function paypalItems(){
+  return cart.map(l=>{
+    const p = byId(l.id), cents = Math.round(p.price*100);
+    return {name:`${p.name} (${l.variant})`.slice(0,127), quantity:String(l.qty), cents, unit_amount:{currency_code:"EUR", value:(cents/100).toFixed(2)}};
+  });
+}
+function openCheckout(){
+  if (!cart.length) return;
+  const t = totals();
+  $("#cart").hidden = true;
+  if (CONFIG.paypalClientId && !CONFIG.paypalClientId.startsWith("{{")) {
+    $("#modalBody").innerHTML = `<div class="legal">
+      <h2>Pago seguro</h2>
+      <p style="color:var(--muted)">Total a pagar: <b class="num" style="color:var(--ink)">${eur(t.total)}</b>. Paga con PayPal o con tarjeta sin crear cuenta. La dirección de envío se indica en el siguiente paso.</p>
+      <label style="display:flex;gap:8px;align-items:flex-start;margin-bottom:16px"><input id="pp-legal" type="checkbox" style="margin-top:5px"> He leído y acepto la política de privacidad y las condiciones de venta.</label>
+      <div id="pp-buttons"><p class="note">Cargando pago…</p></div></div>`;
+    openModal();
+    loadPayPal().then(()=>{
+      $("#pp-buttons").innerHTML = "";
+      paypal.Buttons({
+        onClick: (data, actions)=>{ if ($("#pp-legal").checked) return actions.resolve(); toast("Marca la casilla de condiciones para continuar"); return actions.reject(); },
+        createOrder: (data, actions)=>{
+          const items = paypalItems();
+          const itemCents = items.reduce((s,i)=>s+i.cents*Number(i.quantity),0);
+          const shipCents = Math.round(totals().ship*100);
+          return actions.order.create({purchase_units:[{
+            description:"Pedido Trufa",
+            amount:{currency_code:"EUR", value:((itemCents+shipCents)/100).toFixed(2), breakdown:{
+              item_total:{currency_code:"EUR", value:(itemCents/100).toFixed(2)},
+              shipping:{currency_code:"EUR", value:(shipCents/100).toFixed(2)}}},
+            items: items.map(({cents,...i})=>i)
+          }]});
+        },
+        onApprove: (data, actions)=> actions.order.capture().then(d=>{
+          $("#modalBody").innerHTML = `<div class="legal"><h2>¡Gracias por tu pedido!</h2><p>Pedido <b>${d.id}</b>. Te llegará la confirmación por email y el número de seguimiento cuando salga del almacén.</p><button class="btn primary" data-close>Volver a la tienda</button></div>`;
+          cart = []; save(); renderCart();
+        }),
+        onError: ()=> toast("No se ha podido completar el pago. Inténtalo de nuevo.")
+      }).render("#pp-buttons");
+    }).catch(()=>{ $("#pp-buttons").innerHTML = `<p>No se ha podido cargar el pago. Recarga la página o escríbenos a infoheravia@gmail.com.</p>`; });
+    return;
+  }
+  $("#modalBody").innerHTML = `<div class="legal">
+    <h2>Datos de envío</h2>
+    <p style="color:var(--muted)">Total a pagar: <b class="num" style="color:var(--ink)">${eur(t.total)}</b></p>
+    <form class="checkout" id="coForm">
+      <label>Email<input id="co-email" type="email" required autocomplete="email"></label>
+      <div class="two"><label>Nombre<input id="co-name" required autocomplete="given-name"></label><label>Apellidos<input id="co-last" required autocomplete="family-name"></label></div>
+      <label>Dirección<input id="co-addr" required autocomplete="street-address"></label>
+      <div class="two"><label>Código postal<input id="co-cp" required pattern="[0-9]{5}" inputmode="numeric" autocomplete="postal-code"></label><label>Ciudad<input id="co-city" required autocomplete="address-level2"></label></div>
+      <label style="display:flex;gap:8px;align-items:flex-start;font-weight:500"><input id="co-legal" type="checkbox" required style="margin-top:4px"> He leído y acepto la política de privacidad y las condiciones de venta.</label>
+      <button class="btn primary">Continuar al pago</button>
+      <p class="note">Versión de demostración: en la tienda publicada este paso abre el pago seguro con PayPal o tarjeta.</p>
+    </form></div>`;
+  $("#coForm").addEventListener("submit", e=>{
+    e.preventDefault();
+    $("#modalBody").innerHTML = `<div class="legal"><h2>Pedido de prueba completado</h2><p>En la tienda publicada, aquí el cliente pagaría con PayPal o tarjeta y recibiría la confirmación por email.</p><button class="btn primary" data-close>Volver a la tienda</button></div>`;
+    cart = []; save(); renderCart();
+  });
+  openModal();
+}
+
+/* ---------- Textos legales ---------- */
+const POLICIES = {
+  envios:{t:"Política de envíos", h:`
+    <h3>Zonas</h3><p>Enviamos a España peninsular y Baleares. Canarias, Ceuta y Melilla: consúltanos antes de comprar, porque el envío está sujeto a trámites aduaneros e impuestos locales.</p>
+    <h3>Plazos</h3><p>Preparamos el pedido en 1 a 3 días laborables. La entrega tarda entre 6 y 12 días laborables en península y Baleares. Los productos se envían desde los almacenes internacionales de nuestros proveedores. Los impuestos y aranceles de importación ya están incluidos en el precio, así que no pagas nada al recibirlo.</p>
+    <h3>Costes</h3><p>3,95 € por pedido. Gratis en pedidos desde 39 €.</p>
+    <h3>Seguimiento</h3><p>Recibirás el número de seguimiento por email cuando el pedido salga del almacén. Si un pedido tiene varios productos, pueden llegar en paquetes separados.</p>
+    <h3>Incidencias</h3><p>Si tu pedido llega dañado o no llega en 20 días laborables, escríbenos a infoheravia@gmail.com y lo reenviamos o te devolvemos el dinero.</p>`},
+  devoluciones:{t:"Devoluciones y garantía", h:`
+    <h3>Derecho de desistimiento</h3><p>La ley te da 14 días naturales desde la entrega para devolver un producto sin dar explicaciones (art. 102 y ss. del Real Decreto Legislativo 1/2007). En Trufa lo ampliamos a <b>30 días</b>.</p>
+    <h3>Cómo devolver</h3><ol><li>Escríbenos a infoheravia@gmail.com con tu número de pedido.</li><li>Te enviamos la dirección de devolución. Puedes usar también el formulario de desistimiento de abajo.</li><li>Envía el producto en su estado original y con su embalaje.</li></ol>
+    <h3>Reembolso</h3><p>Te devolvemos el importe, incluido el envío original estándar, en un máximo de 14 días desde que nos comunicas la devolución, por el mismo medio de pago. Podemos retener el reembolso hasta recibir el producto. Los costes de envío de la devolución corren por tu cuenta, salvo que el producto sea defectuoso o no corresponda con lo que pediste.</p>
+    <h3>Garantía legal</h3><p>Todos los productos tienen 3 años de garantía legal de conformidad. Si un producto falla, lo reparamos, lo cambiamos o te devolvemos el dinero.</p>
+    <h3>Formulario de desistimiento</h3><p>A la atención de Eduardo Herrero Viadero, <span class="ph">[dirección]</span>, infoheravia@gmail.com: Por la presente le comunico que desisto de mi contrato de venta del siguiente bien: ___ · Pedido el / recibido el: ___ · Nombre: ___ · Dirección: ___ · Firma y fecha: ___</p>`},
+  privacidad:{t:"Política de privacidad", h:`
+    <h3>Responsable</h3><p>Eduardo Herrero Viadero, NIF <span class="ph">[pendiente]</span>, <span class="ph">[dirección]</span>, email infoheravia@gmail.com.</p>
+    <h3>Para qué usamos tus datos</h3><ul><li>Gestionar y enviar tus pedidos (base legal: ejecución del contrato).</li><li>Cumplir obligaciones fiscales y contables (obligación legal).</li><li>Enviarte novedades y ofertas, solo si lo aceptas (consentimiento).</li></ul>
+    <h3>Con quién los compartimos</h3><p>Con el alojamiento de la web, la pasarela de pago (PayPal), el proveedor que prepara tu pedido y la empresa de transporte, solo para lo necesario. Algunos están fuera del Espacio Económico Europeo y usan cláusulas contractuales tipo aprobadas por la Comisión Europea.</p>
+    <h3>Cuánto tiempo</h3><p>Los datos de pedidos, 6 años por obligación mercantil. Los de marketing, hasta que te des de baja.</p>
+    <h3>Tus derechos</h3><p>Puedes pedir acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a infoheravia@gmail.com. Si crees que no hemos atendido bien tu petición, puedes reclamar ante la Agencia Española de Protección de Datos (aepd.es).</p>`},
+  aviso:{t:"Aviso legal y condiciones", h:`
+    <h3>Titular</h3><p>En cumplimiento de la Ley 34/2002 (LSSI-CE): Eduardo Herrero Viadero, NIF <span class="ph">[pendiente]</span>, domicilio <span class="ph">[dirección]</span>, email infoheravia@gmail.com.</p>
+    <h3>Precios</h3><p>Todos los precios están en euros e incluyen el IVA. Los gastos de envío se muestran antes de pagar.</p>
+    <h3>Proceso de compra</h3><p>El contrato se forma cuando recibes el email de confirmación del pedido. Guarda ese email como justificante.</p>
+    <h3>Resolución de conflictos</h3><p>Si tienes una queja, escríbenos primero. También puedes acudir a la Junta Arbitral de Consumo o a los tribunales de tu domicilio.</p>`},
+  cookies:{t:"Política de cookies", h:`
+    <h3>Qué usamos</h3><p>Esta web solo guarda en tu navegador el contenido de tu carrito, para que no se pierda si cierras la página. Es almacenamiento técnico y no requiere consentimiento.</p>
+    <h3>Pago</h3><p>Al pagar, PayPal puede usar sus propias cookies para procesar el pago de forma segura. Consulta su política en paypal.com.</p>
+    <h3>Análisis y publicidad</h3><p>Ahora mismo no usamos cookies de análisis ni de publicidad. Si las añadimos, te pediremos permiso antes.</p>`}
+};
+function openPolicy(k){ const p=POLICIES[k]; $("#modalBody").innerHTML=`<div class="legal"><h2>${p.t}</h2>${p.h}</div>`; openModal(); }
+
+/* ---------- Utilidades ---------- */
+function openModal(){ $("#modal").hidden=false; $("#scrim").hidden=false; $("#modal .x").focus(); }
+function openCart(){ renderCart(); $("#cart").hidden=false; $("#scrim").hidden=false; $("#cart .x").focus(); }
+function closeAll(){ $("#modal").hidden=true; $("#cart").hidden=true; $("#scrim").hidden=true; }
+let tt; function toast(msg){ const t=$("#toast"); t.textContent=msg; t.hidden=false; clearTimeout(tt); tt=setTimeout(()=>t.hidden=true,1800); }
+
+document.addEventListener("click", e=>{
+  const el = e.target.closest("[data-close],[data-inc],[data-dec],[data-pol],[data-f],#openCart,#toCheckout,#scrim");
+  if (!el) return;
+  if (el.dataset.pol) openPolicy(el.dataset.pol);
+  else if (el.dataset.f){ document.querySelectorAll("[data-f]").forEach(c=>c.setAttribute("aria-pressed", c===el)); renderGrid(el.dataset.f); }
+  else if (el.dataset.inc!==undefined){ cart[+el.dataset.inc].qty++; save(); renderCart(); }
+  else if (el.dataset.dec!==undefined){ const i=+el.dataset.dec; cart[i].qty--; if(cart[i].qty<=0) cart.splice(i,1); save(); renderCart(); }
+  else if (el.id==="openCart") openCart();
+  else if (el.id==="toCheckout") openCheckout();
+  else closeAll();
+});
+document.addEventListener("keydown", e=>{ if(e.key==="Escape") closeAll(); });
+window.addEventListener("hashchange", route);
+
+$("#heroPrice").textContent = eur(byId("arnes").price);
+$("#featPrice").textContent = eur(byId("limpia-patas").price);
+$("#footShop").innerHTML = PRODUCTS.map(p=>`<li><a href="#p-${p.id}">${p.name}</a></li>`).join("");
+if (!CONFIG.paypalClientId || CONFIG.paypalClientId.startsWith("{{")) $("#demoNote").textContent = "Versión de demostración: el pago está desactivado.";
+renderGrid(); renderCart(); route();
+</script>
