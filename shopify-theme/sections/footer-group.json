@@ -5,13 +5,6 @@
     "footer_m9NzUG": {
       "type": "footer",
       "blocks": {
-        "links_tf": {
-          "type": "custom-liquid",
-          "settings": {
-            "custom_liquid": "<div style=\"display:flex;flex-direction:column;gap:8px;font-size:15px\">\n<strong style=\"font-size:16px\">Trufa</strong>\n<span style=\"opacity:.75\">Accesorios sencillos para perros y gatos. Envío a toda España.</span>\n<a href=\"/collections/nuestros-productos\">Productos</a>\n<a href=\"/pages/preguntas-frecuentes\">Preguntas frecuentes</a>\n<a href=\"/pages/contact\">Contacto</a>\n<a href=\"mailto:infoheravia@gmail.com\">infoheravia@gmail.com</a>\n</div>"
-          },
-          "blocks": {}
-        },
         "group_H6VpwJ": {
           "type": "group",
           "settings": {
@@ -72,12 +65,28 @@
             "button_type_preset": "paragraph"
           },
           "blocks": {}
+        },
+        "menu_tf": {
+          "type": "menu",
+          "settings": {
+            "menu": "footer",
+            "heading": "Trufa",
+            "menu_spacing": 10,
+            "heading_preset": "h5",
+            "link_preset": "paragraph"
+          },
+          "blocks": {}
+        },
+        "payments_tf": {
+          "type": "payment-icons",
+          "settings": {},
+          "blocks": {}
         }
       },
       "block_order": [
-        "links_tf",
         "group_H6VpwJ",
-        "email_signup_crihX7"
+        "email_signup_crihX7",
+        "menu_tf"
       ],
       "name": "t:names.footer",
       "settings": {
@@ -107,17 +116,11 @@
             "case": "none"
           },
           "blocks": {}
-        },
-        "payments_tf": {
-          "type": "payment-icons",
-          "settings": {},
-          "blocks": {}
         }
       },
       "block_order": [
         "footer_copyright_jweRK8",
-        "footer_policy_list_VCdnpa",
-        "payments_tf"
+        "footer_policy_list_VCdnpa"
       ],
       "name": "t:names.utilities",
       "settings": {
