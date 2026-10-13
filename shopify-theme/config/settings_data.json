@@ -1,0 +1,43 @@
+{
+  "current": {
+    "logo_height": 36,
+    "logo_height_mobile": 28,
+    "page_background_color": "{{ settings.color_palette.background }}",
+    "page_width": "narrow",
+    "page_text_color": "{{ settings.color_palette.foreground }}",
+    "type_body_font": "inter_n4",
+    "type_subheading_font": "inter_n6",
+    "type_heading_font": "inter_n8",
+    "type_accent_font": "inter_n7",
+    "type_size_paragraph": "16",
+    "type_line_height_paragraph": "body-loose",
+    "button_border_radius_primary": 100,
+    "button_border_radius_secondary": 100,
+    "palette_primary_button_background": "#2242C4",
+    "palette_primary_button_text": "#FFFFFF",
+    "palette_primary_button_border": "#2242C4",
+    "primary_button_border_width": 0,
+    "palette_secondary_button_background": "rgba(0,0,0,0)",
+    "palette_secondary_button_text": "#2242C4",
+    "palette_secondary_button_border": "#2242C4",
+    "secondary_button_border_width": 1,
+    "badge_sale_background_color": "#FFD54A",
+    "badge_sale_text_color": "#14211D",
+    "badge_corner_radius": 100,
+    "cart_type": "drawer",
+    "show_add_discount_code": true,
+    "product_corner_radius": 16,
+    "card_corner_radius": 16,
+    "variant_button_radius": 100,
+    "palette_selected_variant_background": "#14211D",
+    "palette_selected_variant_text": "#FFFFFF",
+    "palette_selected_variant_border": "#14211D",
+    "inputs_border_radius": 12,
+    "color_palette": {
+      "background": "#FFFDF8",
+      "foreground": "#14211D",
+      "color1": "#33413C",
+      "color2": "#E6E1D6"
+    }
+  }
+}
