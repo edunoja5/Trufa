@@ -1,0 +1,167 @@
+{
+  "sections": {
+    "tf_hero": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>\n.tf{--tb:#2242C4;--tt:#14211D;--ty:#FFD54A;--tm:#56635E;--tc:#FFF4D6;--tl:#F6F3EC;color:var(--tt)}\n.tf *{box-sizing:border-box}\n.tf h1,.tf h2,.tf h3{color:var(--tt);margin:0;letter-spacing:-.01em}\n.tf p{margin:0}\n.tf a.tf-btn{display:inline-block;background:var(--tb);color:#fff;text-decoration:none;font-weight:700;padding:15px 28px;border-radius:999px;font-size:16px;transition:transform .15s,box-shadow .15s}\n.tf a.tf-btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(34,66,196,.25)}\n.tf-eyebrow{display:inline-block;background:var(--ty);color:var(--tt);font-weight:700;font-size:13px;padding:6px 12px;border-radius:999px;margin-bottom:16px}\n.tf-hero{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;background:var(--tc);border-radius:28px;padding:56px;overflow:hidden}\n.tf-hero h1{font-size:clamp(34px,5vw,58px);line-height:1.05;margin-bottom:18px}\n.tf-hero p.tf-lead{font-size:18px;line-height:1.5;color:var(--tm);margin-bottom:28px;max-width:30em}\n.tf-hero__img{background:#fff;border-radius:22px;overflow:hidden;aspect-ratio:1/1}\n.tf-hero__img img{width:100%;height:100%;object-fit:cover;display:block}\n.tf-checks{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:22px;padding:0;list-style:none;font-size:14px;color:var(--tm)}\n.tf-checks li:before{content:\"\\2713\";color:var(--tb);font-weight:800;margin-right:6px}\n.tf-perks{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}\n.tf-perk{display:flex;gap:12px;align-items:center;background:var(--tl);border-radius:18px;padding:18px}\n.tf-perk svg{flex:0 0 34px;width:34px;height:34px;color:var(--tb)}\n.tf-perk b{display:block;font-size:15px}\n.tf-perk span{font-size:13px;color:var(--tm)}\n.tf-h2{font-size:clamp(28px,3.4vw,40px);line-height:1.1;text-align:center;margin-bottom:10px}\n.tf-sub{text-align:center;color:var(--tm);font-size:17px;margin:0 auto 36px;max-width:36em}\n.tf-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}\n.tf-card{background:#fff;border:1px solid #ECE7DC;border-radius:22px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .15s,box-shadow .15s}\n.tf-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(20,33,29,.08)}\n.tf-card__img{aspect-ratio:1/1;background:#fff}\n.tf-card__img img{width:100%;height:100%;object-fit:cover;display:block}\n.tf-card__body{padding:20px 22px 24px;display:flex;flex-direction:column;gap:8px;flex:1}\n.tf-card__q{font-size:13px;font-weight:700;color:var(--tb);text-transform:uppercase;letter-spacing:.04em}\n.tf-card h3{font-size:21px;line-height:1.2}\n.tf-card p{color:var(--tm);font-size:15px;line-height:1.5;flex:1}\n.tf-card__go{font-weight:700;margin-top:6px}\n.tf-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s}\n.tf-step{background:var(--tl);border-radius:22px;padding:26px}\n.tf-step:before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--ty);font-weight:800;margin-bottom:14px}\n.tf-step h3{font-size:19px;margin-bottom:6px}\n.tf-step p{color:var(--tm);font-size:15px;line-height:1.5}\n.tf-faq{max-width:760px;margin:0 auto}\n.tf-faq details{border-bottom:1px solid #E6E1D6;padding:18px 0}\n.tf-faq summary{cursor:pointer;font-weight:700;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:16px}\n.tf-faq summary::-webkit-details-marker{display:none}\n.tf-faq summary:after{content:\"+\";font-size:24px;line-height:1;color:var(--tb)}\n.tf-faq details[open] summary:after{content:\"\\2212\"}\n.tf-faq details p{margin-top:10px;color:var(--tm);line-height:1.6}\n.tf-faq .tf-more{text-align:center;margin-top:24px}\n.tf-faq .tf-more a{color:var(--tb);font-weight:700}\n.tf-cta{background:var(--tb);color:#fff;border-radius:28px;padding:52px 32px;text-align:center}\n.tf-cta h2{color:#fff;font-size:clamp(28px,3.6vw,42px);line-height:1.1;margin-bottom:12px}\n.tf-cta p{opacity:.9;font-size:17px;margin-bottom:26px}\n.tf-cta .tf-code{display:inline-block;background:var(--ty);color:var(--tt);font-weight:800;letter-spacing:.08em;padding:4px 12px;border-radius:8px}\n.tf-cta a.tf-btn{background:#fff;color:var(--tb)}\n@media (max-width:989px){.tf-perks{grid-template-columns:repeat(2,1fr)}}\n@media (max-width:749px){\n.tf-hero{grid-template-columns:1fr;padding:22px 20px 30px;gap:22px;border-radius:22px}\n.tf-hero__img{order:-1}\n.tf-hero p.tf-lead{font-size:16px}\n.tf a.tf-btn{display:block;text-align:center}\n.tf-perks{grid-template-columns:1fr 1fr;gap:10px}\n.tf-perk{flex-direction:column;align-items:flex-start;padding:14px}\n.tf-cards,.tf-steps{grid-template-columns:1fr}\n.tf-cta{padding:38px 20px;border-radius:22px}\n}\n</style>\n{%- assign hp = all_products['arnes-antitirones-acolchado'] -%}\n<div class=\"tf\"><div class=\"tf-hero\">\n  <div>\n    <span class=\"tf-eyebrow\">Para perros y gatos · Envío a toda España</span>\n    <h1>Menos barro, menos pelo, más paseos.</h1>\n    <p class=\"tf-lead\">Accesorios sencillos que resuelven los líos de cada día con tu mascota. Probados, fáciles de usar y con 30 días para devolverlos.</p>\n    <a class=\"tf-btn\" href=\"/collections/nuestros-productos\">Ver los productos</a>\n    <ul class=\"tf-checks\"><li>Envío gratis desde 39 €</li><li>Devolución en 30 días</li><li>Pago 100 % seguro</li></ul>\n  </div>\n  <div class=\"tf-hero__img\">{%- if hp.featured_image -%}{{ hp.featured_image | image_url: width: 900 | image_tag: loading: 'eager', fetchpriority: 'high', widths: '450, 700, 900', sizes: '(min-width: 750px) 45vw, 100vw', alt: 'Perro paseando con el arnés antitirones de Trufa' }}{%- endif -%}</div>\n</div></div>",
+        "section_width": "page-width",
+        "padding-block-start": 16,
+        "padding-block-end": 20
+      }
+    },
+    "tf_perks": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"tf\"><div class=\"tf-perks\">\n<div class=\"tf-perk\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 7h11v9H3z\"/><path d=\"M14 10h4l3 3v3h-7\"/><circle cx=\"7\" cy=\"17.5\" r=\"1.8\"/><circle cx=\"17\" cy=\"17.5\" r=\"1.8\"/></svg><div><b>Envío gratis desde 39 €</b><span>Con seguimiento, 6–12 días</span></div></div>\n<div class=\"tf-perk\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 14 4 9l5-5\"/><path d=\"M4 9h10.5a5.5 5.5 0 0 1 0 11H11\"/></svg><div><b>30 días de devolución</b><span>Sin dar explicaciones</span></div></div>\n<div class=\"tf-perk\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"4\" y=\"10\" width=\"16\" height=\"11\" rx=\"2\"/><path d=\"M8 10V7a4 4 0 0 1 8 0v3\"/></svg><div><b>Pago seguro</b><span>Tarjeta, Apple Pay, Google Pay, PayPal</span></div></div>\n<div class=\"tf-perk\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z\"/></svg><div><b>Atención en español</b><span>Respuesta en 24 h laborables</span></div></div>\n</div></div>",
+        "section_width": "page-width",
+        "padding-block-start": 0,
+        "padding-block-end": 8
+      }
+    },
+    "tf_products": {
+      "type": "product-list",
+      "blocks": {
+        "static-header": {
+          "type": "_product-list-content",
+          "static": true,
+          "settings": {
+            "content_direction": "row",
+            "horizontal_alignment": "space-between",
+            "vertical_alignment": "flex-end",
+            "align_baseline": true,
+            "gap": 12,
+            "width": "fill"
+          },
+          "blocks": {
+            "t1": {
+              "type": "_product-list-text",
+              "settings": {
+                "text": "<h2>Nuestros productos</h2>",
+                "type_preset": "h3",
+                "width": "fit-content",
+                "alignment": "left"
+              },
+              "blocks": {}
+            },
+            "b1": {
+              "type": "_product-list-button",
+              "settings": {
+                "label": "Ver todo",
+                "style_class": "link",
+                "width": "fit-content"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "t1",
+            "b1"
+          ]
+        },
+        "static-product-card": {
+          "type": "_product-card",
+          "static": true,
+          "settings": {
+            "product_card_gap": 6,
+            "border": "none",
+            "border_radius": 0
+          },
+          "blocks": {
+            "g1": {
+              "type": "_product-card-gallery",
+              "settings": {
+                "image_ratio": "square",
+                "border": "none",
+                "border_radius": 16
+              },
+              "blocks": {}
+            },
+            "pt": {
+              "type": "product-title",
+              "settings": {
+                "type_preset": "h5",
+                "alignment": "left",
+                "padding-block-start": 6
+              },
+              "blocks": {}
+            },
+            "pr": {
+              "type": "price",
+              "settings": {
+                "show_sale_price_first": true,
+                "type_preset": "paragraph",
+                "alignment": "left"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "g1",
+            "pt",
+            "pr"
+          ]
+        }
+      },
+      "settings": {
+        "collection": "nuestros-productos",
+        "layout_type": "grid",
+        "carousel_on_mobile": false,
+        "max_products": 12,
+        "columns": 3,
+        "mobile_columns": "2",
+        "columns_gap": 16,
+        "rows_gap": 28,
+        "section_width": "page-width",
+        "horizontal_alignment": "flex-start",
+        "gap": 28,
+        "padding-block-start": 56,
+        "padding-block-end": 40
+      }
+    },
+    "tf_solutions": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"tf\"><h2 class=\"tf-h2\">Tres problemas de cada día, resueltos</h2>\n<p class=\"tf-sub\">Elegimos cada producto porque arregla algo que nos pasaba a nosotros con nuestros perros.</p>\n<div class=\"tf-cards\">{%- assign p = all_products['limpiador-de-patas-portatil'] -%}\n<a class=\"tf-card\" href=\"{{ p.url }}\"><div class=\"tf-card__img\">{%- if p.featured_image -%}{{ p.featured_image | image_url: width: 700 | image_tag: loading: 'lazy', widths: '350, 700', sizes: '(min-width: 750px) 30vw, 100vw' }}{%- endif -%}</div>\n<div class=\"tf-card__body\"><span class=\"tf-card__q\">¿Huellas de barro en casa?</span><h3>Patas limpias en 10 segundos</h3><p>Mete la pata, gira el vaso y sale limpia, solo con agua. Sin toallitas ni sofás manchados.</p><span class=\"tf-card__go\">Ver limpiador · {{ p.price | money }} →</span></div></a>{%- assign p = all_products['cepillo-con-vapor-3-en-1'] -%}\n<a class=\"tf-card\" href=\"{{ p.url }}\"><div class=\"tf-card__img\">{%- if p.featured_image -%}{{ p.featured_image | image_url: width: 700 | image_tag: loading: 'lazy', widths: '350, 700', sizes: '(min-width: 750px) 30vw, 100vw' }}{%- endif -%}</div>\n<div class=\"tf-card__body\"><span class=\"tf-card__q\">¿Pelo por todas partes?</span><h3>El pelo se queda en el cepillo</h3><p>Su vapor frío humedece el pelo suelto para que no salga volando por la casa ni se pegue a la ropa.</p><span class=\"tf-card__go\">Ver cepillo · {{ p.price | money }} →</span></div></a>{%- assign p = all_products['arnes-antitirones-acolchado'] -%}\n<a class=\"tf-card\" href=\"{{ p.url }}\"><div class=\"tf-card__img\">{%- if p.featured_image -%}{{ p.featured_image | image_url: width: 700 | image_tag: loading: 'lazy', widths: '350, 700', sizes: '(min-width: 750px) 30vw, 100vw' }}{%- endif -%}</div>\n<div class=\"tf-card__body\"><span class=\"tf-card__q\">¿Tira de la correa?</span><h3>Paseos sin tirones en el cuello</h3><p>La anilla del pecho reparte el tirón por el torso. Acolchado, reflectante y con asa para sujetarlo.</p><span class=\"tf-card__go\">Ver arnés · {{ p.price | money }} →</span></div></a></div></div>",
+        "section_width": "page-width",
+        "padding-block-start": 40,
+        "padding-block-end": 56
+      }
+    },
+    "tf_steps": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"tf\"><h2 class=\"tf-h2\">Comprar en Trufa es fácil</h2>\n<p class=\"tf-sub\">Sin letra pequeña: sabes lo que pagas y cuándo llega.</p>\n<div class=\"tf-steps\">\n<div class=\"tf-step\"><h3>Eliges y pagas seguro</h3><p>Precio final con impuestos incluidos. Con el código HOLA10 te ahorras un 10 % en tu primer pedido.</p></div>\n<div class=\"tf-step\"><h3>Te lo enviamos con seguimiento</h3><p>Lo preparamos en 1–3 días laborables y llega en 6–12 días laborables. Sin aduanas ni sorpresas al recibirlo.</p></div>\n<div class=\"tf-step\"><h3>Si no te convence, lo devuelves</h3><p>Tienes 30 días para devolverlo y 3 años de garantía. Escríbenos y te ayudamos en español.</p></div>\n</div></div>",
+        "section_width": "page-width",
+        "padding-block-start": 8,
+        "padding-block-end": 56
+      }
+    },
+    "tf_faq": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"tf\"><div class=\"tf-faq\"><h2 class=\"tf-h2\">Preguntas frecuentes</h2><p class=\"tf-sub\">Lo que más nos preguntáis antes de comprar.</p><details><summary>¿Cuánto tarda mi pedido?</summary><p>Lo preparamos en 1 a 3 días laborables y llega en 6 a 12 días laborables. Te enviamos el seguimiento por email.</p></details><details><summary>¿Cuánto cuesta el envío?</summary><p>3,95 €. Gratis en pedidos desde 39 €.</p></details><details><summary>¿Tendré que pagar aduanas?</summary><p>No. Los impuestos y aranceles ya están incluidos en el precio.</p></details><details><summary>¿Qué talla de arnés elijo?</summary><p>Mide el contorno del pecho justo detrás de las patas delanteras: S 35–50 cm, M 45–65 cm, L 60–80 cm, XL 75–100 cm.</p></details><details><summary>¿Y si no me convence?</summary><p>Tienes 30 días desde la entrega para devolverlo sin dar explicaciones. Escríbenos y te decimos cómo.</p></details><p class=\"tf-more\"><a href=\"/pages/preguntas-frecuentes\">Ver todas las preguntas</a></p></div></div>",
+        "section_width": "page-width",
+        "padding-block-start": 8,
+        "padding-block-end": 56
+      }
+    },
+    "tf_cta": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"tf\"><div class=\"tf-cta\"><h2>10 % de descuento en tu primer pedido</h2>\n<p>Usa el código <span class=\"tf-code\">HOLA10</span> al pagar. Envío gratis desde 39 €.</p>\n<a class=\"tf-btn\" href=\"/collections/nuestros-productos\">Ir a la tienda</a></div></div>",
+        "section_width": "page-width",
+        "padding-block-start": 0,
+        "padding-block-end": 64
+      }
+    }
+  },
+  "order": [
+    "tf_hero",
+    "tf_perks",
+    "tf_products",
+    "tf_solutions",
+    "tf_steps",
+    "tf_faq",
+    "tf_cta"
+  ]
+}
